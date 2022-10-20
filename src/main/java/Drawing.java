@@ -1,5 +1,8 @@
+import shapes.Circle;
+import shapes.Rect;
+
 import java.awt.*;
-import java.awt.event.WindowAdapter;
+import java.awt.event.WindowAdapter; //changes of development branch
 import java.awt.event.WindowEvent;
 
 public class Drawing extends Canvas {
