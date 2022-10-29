@@ -1,9 +1,12 @@
 import java.awt.*; //change made
 
-public class Circle extends Shape{
+public class Circle implements Shapee{
     private  int rad;
+    private Point pos;
+    private Color col;
     public Circle(Point pos, Color col, int radius){
-        super(pos, col);
+        this.pos = pos;
+        this.col = col;
         rad=radius;
 
     }

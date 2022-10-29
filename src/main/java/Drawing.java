@@ -1,13 +1,18 @@
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Drawing extends Canvas {
-    Point p = new Point(200,200);
+    Point p = new Point();
     Color c = new Color(0x82266);
     private Circle circ ;
+    Random rand = new Random();
     private Rect rect;
+
     private Frame f;
+    private ArrayList<Shapee> listofshapes = new ArrayList<>();
     public Drawing(){
         setupFrame();
         f.addWindowListener(new WindowAdapter(){
@@ -16,6 +21,19 @@ public class Drawing extends Canvas {
             }
         });
         setupCanvas();
+
+        ///
+
+        for(int i=0; i<6; i= i+1){
+            listofshapes.add(new Circle(new Point(rand.nextInt(400),rand.nextInt(400)),c,rand.nextInt(200)));
+        }
+        for(int i=0; i<6; i= i+1){
+            listofshapes.add(new Rect(rand.nextInt(400),rand.nextInt(400),new Point(rand.nextInt(400),rand.nextInt(400)),c));
+        }
+        for(int i=0; i<6; i= i+1){
+            listofshapes.add(new Circle(new Point(rand.nextInt(400),rand.nextInt(400)),c,rand.nextInt(200)));
+        }
+
     }
 
     private void setupFrame() {
@@ -32,10 +50,14 @@ public class Drawing extends Canvas {
     }
 
     public void paint(Graphics g){
-        circ = new Circle(p,c,100);
-        rect = new Rect(50, 40, p,c);
-        circ.draw(g);
-        rect.draw(g);
+        for(Shapee s:listofshapes){
+            s.draw(g);
+        }
     }
 
-}
+
+    };
+
+
+
+
