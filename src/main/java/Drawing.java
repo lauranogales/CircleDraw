@@ -22,16 +22,14 @@ public class Drawing extends Canvas {
         });
         setupCanvas();
 
-        ///
-
-        for(int i=0; i<6; i= i+1){
+        for(int i=0; i<4; i= i+1){
             listofshapes.add(new Circle(new Point(rand.nextInt(400),rand.nextInt(400)),c,rand.nextInt(200)));
         }
-        for(int i=0; i<6; i= i+1){
-            listofshapes.add(new Rect(rand.nextInt(400),rand.nextInt(400),new Point(rand.nextInt(400),rand.nextInt(400)),c));
+        for(int i=0; i<4; i= i+1){
+            listofshapes.add(new Rect(rand.nextInt(400),rand.nextInt(400),new Point(rand.nextInt(400),rand.nextInt(400)),new Color(0x8226)));
         }
-        for(int i=0; i<6; i= i+1){
-            listofshapes.add(new Circle(new Point(rand.nextInt(400),rand.nextInt(400)),c,rand.nextInt(200)));
+        for(int i=0; i<4; i= i+1){
+            listofshapes.add(new Square(50,50,new Point(rand.nextInt(400),rand.nextInt(400)),new Color(0x822669)));
         }
 
     }
@@ -46,7 +44,7 @@ public class Drawing extends Canvas {
 
     private void setupCanvas() {
         setBackground(Color.WHITE);
-        setSize(400,400);
+        setSize(1000,1000);
     }
 
     public void paint(Graphics g){
